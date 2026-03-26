@@ -7,21 +7,21 @@
 
 /* === CSS VARIABLES (the "design system" lmao) === */
 :root {
-  --neon-pink: #ff00ff;
-  --neon-green: #39ff14;
-  --neon-blue: #00f0ff;
-  --neon-yellow: #fff700;
-  --neon-orange: #ff6600;
-  --hot-pink: #ff1493;
-  --electric-purple: #bf00ff;
-  --cyber-red: #ff0040;
+  --neon-pink: #aa0077;
+  --neon-green: #1a7a00;
+  --neon-blue: #0055cc;
+  --neon-yellow: #996600;
+  --neon-orange: #cc4400;
+  --hot-pink: #cc0055;
+  --electric-purple: #6600bb;
+  --cyber-red: #bb0022;
   --comic-sans: 'Comic Sans MS', 'Chalkboard SE', cursive;
   --papyrus: 'Papyrus', 'Herculanum', fantasy;
   --pixel-font: 'Press Start 2P', monospace;
   --bungee: 'Bungee Shade', cursive;
   --glitch-font: 'Rubik Glitch', system-ui;
   --silkscreen: 'Silkscreen', monospace;
-  --rainbow-gradient: linear-gradient(45deg, #ff0000, #ff7700, #ffff00, #00ff00, #0000ff, #8b00ff, #ff0000);
+  --rainbow-gradient: linear-gradient(45deg, #cc0000, #cc7700, #cccc00, #007700, #0000cc, #660099, #cc0000);
   --star-size: 20px;
 }
 
@@ -34,44 +34,20 @@
 
 html {
   overflow-x: hidden;
-  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ctext y='24' font-size='24'%3E%E2%AD%90%3C/text%3E%3C/svg%3E") 16 16, auto;
 }
 
 body {
   font-family: var(--comic-sans);
-  color: var(--neon-green);
+  color: #333;
+  background: #ffffff;
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
-  image-rendering: pixelated;
 }
 
-/* === ANIMATED TILED BACKGROUND === */
+/* === ANIMATED TILED BACKGROUND (disabled) === */
 .bg-tiled {
-  background-color: #000033;
-  background-image:
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 50px,
-      rgba(255, 0, 255, 0.03) 50px,
-      rgba(255, 0, 255, 0.03) 51px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 50px,
-      rgba(0, 255, 255, 0.03) 50px,
-      rgba(0, 255, 255, 0.03) 51px
-    ),
-    url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='10' y='30' font-size='20' opacity='0.15'%3E%E2%9C%A8%3C/text%3E%3Ctext x='40' y='55' font-size='14' opacity='0.1'%3E%E2%AD%90%3C/text%3E%3C/svg%3E");
-  background-size: 51px 51px, 51px 51px, 60px 60px;
-  animation: bg-scroll 20s linear infinite;
-}
-
-@keyframes bg-scroll {
-  0% { background-position: 0 0, 0 0, 0 0; }
-  100% { background-position: 0 200px, 200px 0, 60px 60px; }
+  background-color: #ffffff;
 }
 
 /* === BLINK TAG IS BACK BABY === */
@@ -101,23 +77,15 @@ body {
 
 /* === MARQUEE STYLES === */
 .marquee-bar {
-  background: linear-gradient(90deg, #ff0000, #ff00ff, #00ffff, #ffff00, #ff0000);
-  background-size: 200% 100%;
-  animation: marquee-bg 3s linear infinite;
+  background: #1a1a2e;
   padding: 8px 0;
   font-family: var(--pixel-font);
   font-size: 11px;
   color: #ffffff;
-  text-shadow: 2px 2px 0 #000, -1px -1px 0 #000;
   overflow: hidden;
   white-space: nowrap;
-  border-top: 3px solid var(--neon-yellow);
-  border-bottom: 3px solid var(--neon-yellow);
-}
-
-@keyframes marquee-bg {
-  0% { background-position: 0% 0%; }
-  100% { background-position: 200% 0%; }
+  border-top: 2px solid #444;
+  border-bottom: 2px solid #444;
 }
 
 .marquee-content {
@@ -228,25 +196,22 @@ body {
 
 /* === RETRO SECTION BOXES === */
 .retro-box {
-  border: 3px ridge #c0c0c0;
-  background: linear-gradient(180deg, #000066 0%, #000033 100%);
+  border: 2px solid #ccc;
+  background: #f9f9f9;
   margin: 15px;
-  box-shadow:
-    inset 1px 1px 0 rgba(255,255,255,0.2),
-    inset -1px -1px 0 rgba(0,0,0,0.5),
-    4px 4px 0 rgba(0,0,0,0.5);
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.15);
 }
 
 .retro-box-title {
-  background: linear-gradient(180deg, #000088, #0000cc);
+  background: #e0e0e0;
   padding: 4px 8px;
   font-family: var(--silkscreen);
   font-size: 12px;
-  color: white;
+  color: #222;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 2px groove #c0c0c0;
+  border-bottom: 1px solid #bbb;
 }
 
 .retro-box-title .window-buttons {
@@ -301,9 +266,9 @@ body {
 }
 
 .guestbook-entry {
-  border-bottom: 1px dashed var(--neon-pink);
+  border-bottom: 1px dashed #ccc;
   padding: 10px 0;
-  color: #ffccff;
+  color: #333;
 }
 
 .guestbook-entry .gb-name {
@@ -319,8 +284,8 @@ body {
 .guestbook-form textarea {
   width: 100%;
   height: 60px;
-  background: #000;
-  color: var(--neon-green);
+  background: #fff;
+  color: #333;
   border: 2px inset #808080;
   font-family: var(--comic-sans);
   padding: 5px;
@@ -551,7 +516,7 @@ body {
 }
 
 .game-header {
-  background: linear-gradient(180deg, #000088, #0000cc);
+  background: #2a2a3e;
   padding: 4px 8px;
   font-family: var(--silkscreen);
   font-size: 11px;
@@ -614,28 +579,27 @@ body {
 .odometer {
   display: inline-flex;
   gap: 1px;
-  background: #000;
+  background: #222;
   padding: 3px;
   border: 2px inset #666;
 }
 
 .odometer .odo-digit {
   background: #001a00;
-  color: var(--neon-green);
+  color: #39ff14;
   font-family: 'Courier New', monospace;
   font-size: 22px;
   font-weight: bold;
   padding: 2px 5px;
   border: 1px solid #003300;
-  text-shadow: 0 0 10px var(--neon-green);
   min-width: 22px;
   text-align: center;
 }
 
 /* === SCROLLING NEWS TICKER === */
 .news-ticker {
-  background: #1a0000;
-  border: 1px solid var(--cyber-red);
+  background: #f0f0f0;
+  border: 1px solid #ccc;
   padding: 5px 0;
   overflow: hidden;
   white-space: nowrap;
@@ -645,7 +609,7 @@ body {
   display: inline-block;
   padding-left: 100%;
   animation: ticker 25s linear infinite;
-  color: var(--cyber-red);
+  color: #333;
   font-family: var(--pixel-font);
   font-size: 11px;
 }
@@ -734,12 +698,11 @@ body {
 /* === LINK STYLES === */
 a {
   color: var(--neon-blue);
-  text-decoration: underline wavy;
+  text-decoration: underline;
 }
 
 a:hover {
   color: var(--neon-pink);
-  text-shadow: 0 0 10px var(--neon-pink);
 }
 
 a:visited {
@@ -748,21 +711,20 @@ a:visited {
 
 /* === SCROLLBAR STYLING === */
 ::-webkit-scrollbar {
-  width: 16px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #000033;
-  border: 1px solid #333;
+  background: #f0f0f0;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--neon-pink), var(--electric-purple));
-  border: 2px outset #ff66ff;
+  background: #aaa;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--neon-yellow);
+  background: #888;
 }
 
 /* === DANCING LETTERS === */
@@ -886,9 +848,10 @@ a:visited {
 .mood-box {
   font-family: var(--comic-sans);
   padding: 8px;
-  background: rgba(255, 0, 255, 0.1);
-  border: 1px dashed var(--hot-pink);
+  background: #f5f5f5;
+  border: 1px dashed #aaa;
   font-size: 14px;
+  color: #333;
 }
 
 /* === TABLE OF DOOM (MySpace info table) === */
@@ -904,8 +867,8 @@ a:visited {
 }
 
 .info-table td:first-child {
-  background: rgba(0, 0, 102, 0.5);
-  color: var(--neon-yellow);
+  background: #e8e8e8;
+  color: #333;
   font-weight: bold;
   width: 120px;
   font-family: var(--silkscreen);
@@ -913,35 +876,17 @@ a:visited {
 }
 
 .info-table td:last-child {
-  color: #ccccff;
+  color: #333;
 }
 
 /* === FIRE TEXT (CSS ONLY) === */
 .fire-text {
-  color: #fff;
-  text-shadow:
-    0 -3px 5px #ff0,
-    0 -5px 10px #ff8000,
-    0 -7px 15px #ff0000,
-    0 -9px 20px #ff0000;
-  animation: fire-flicker 0.15s infinite alternate;
+  color: #222;
 }
 
-@keyframes fire-flicker {
-  0% { text-shadow: 0 -3px 5px #ff0, 0 -5px 10px #ff8000, 0 -7px 15px #ff0000, 0 -9px 20px #ff0000; }
-  100% { text-shadow: 0 -3px 7px #ff0, 0 -6px 12px #ff8000, 0 -8px 17px #ff0000, 0 -10px 22px #ff0000; }
-}
-
-/* === MATRIX RAIN CANVAS === */
+/* === MATRIX RAIN CANVAS (disabled) === */
 #matrix-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  opacity: 0.15;
-  pointer-events: none;
+  display: none;
 }
 
 /* === TOOLTIP 90s STYLE === */
